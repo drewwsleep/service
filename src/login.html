@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Войти — Garage 62</title>
+  <link rel="stylesheet" type="text/css" href="style.min.css">
+  <link rel="icon" type="image/x-icon" href="images/62.png">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="logo"><img src="images/icon.png" alt="Garage 62"> |Garage62</a>
+      <div class="auth-buttons" id="authButtons">
+        <a href="login.html" class="btn-login">Войти</a>
+        <a href="reg.html" class="btn-register">Зарегистрироваться</a>
+      </div>
+      <div class="user-info" id="userInfo" style="display: none;">
+        <span id="userName"></span> <span id="userRole"></span>
+        <button class="btn-logout" id="logoutBtn">Выйти</button>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html#services">Услуги</a></li>
+        <li><a href="index.html#parts">Запчасти</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container auth-page">
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Войти в аккаунт</h1>
+        
+        <form class="auth-form" id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" placeholder="Ваш email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="loginPassword">Пароль</label>
+            <div class="password-container">
+              <input type="password" id="loginPassword" name="password" placeholder="Ваш пароль" required>
+            </div>
+          </div>
+          
+          <button type="submit" class="auth-button">Войти</button>
+          <div id="loginMessage"></div>
+          <div id="notification"></div>
+          
+          <div class="auth-footer">
+            Нет аккаунта? <a href="reg.html">Зарегистрироваться</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="main.min.js"></script>
+</body>
+</html>

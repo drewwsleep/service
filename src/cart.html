@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Корзина — Garage62</title>
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="icon" type="image/x-icon" href="images/62.png">
+</head>
+<body>
+
+<!-- ХЕДЕР С НАВИГАЦИЕЙ -->
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo"><img src="images/icon.png" alt="Garage 62"> |Garage62</a>
+    
+    <div class="auth-buttons" id="authButtons">
+      <a href="cart.html" class="btn-cart" title="Корзина">
+        <span class="cart-count">🛒<span id="cartCount">0</span> </span>
+      </a>
+      <a href="login.html" class="btn-login">Войти</a>
+      <a href="reg.html" class="btn-register">Зарегистрироваться</a>
+    </div>
+    
+    <div class="user-info" id="userInfo">
+      <div class="user-top">
+        <span id="userName"></span>
+        <span id="userRole"></span>
+        <button id="logoutBtn" class="btn-logout">Выйти</button>
+      </div>
+      <div class="user-car" id="userCarInfo"></div>
+    </div>
+
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="index.html#parts">Запчасти</a></li>
+      <li><a href="index.html#booking">Запись</a></li>
+      <li id="adminNav"><a href="index.html#admin">Администрирование</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="cart">
+    <h2>Ваша корзина</h2>
+    <p class="section-desc">Проверяйте товары и услуги перед оформлением</p>
+
+    <div class="cart-container" id="cartApp">
+      <!-- Пустая корзина -->
+      <div v-if="cartItems.length === 0" class="cart-list">
+        <p class="empty-message">В корзине пока ничего нет</p>
+      </div>
+
+      <!-- Список товаров -->
+      <div v-else class="cart-list">
+        <div class="cart-item" v-for="(item, index) in cartItems" :key="`${item.type}-${item.name}`">
+          <img v-if="item.image" :src="item.image" :alt="item.name" class="cart-item-image">
+          <div v-else-if="item.type === 'service'" class="cart-item-icon">⚙️</div>
+
+          <div class="item-info">
+            <strong>{{ item.name }}</strong>
+            <div class="item-meta">
+              {{ item.type === 'service' ? 'Услуга' : 'Запчасть' }} — {{ formatPrice(item.price) }}
+            </div>
+          </div>
+
+          <div class="item-controls">
+            <!-- Для запчастей: показываем +, -, количество -->
+            <template v-if="item.type === 'part'">
+              <button @click="decreaseItem(index)" class="btn-admin btn-decrease">−</button>
+              <span class="item-qty">{{ item.qty }}</span>
+              <button @click="increaseItem(index)" class="btn-admin btn-increase">+</button>
+            </template>
+
+            <!-- Для всех: кнопка удаления -->
+            <button @click="removeItem(index)" class="btn-remove btn-delete-record">Удалить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Итоговая сумма -->
+      <aside class="cart-summary">
+        <h3>Итого</h3>
+        <p class="cart-total">{{ formatPrice(totalPrice) }}</p>
+        <button id="btnClearCart" @click="clearCart" class="btn-admin">Очистить корзину</button>
+        <a href="order.html" id="btnCheckout" class="btn-checkout">Оформить заказ</a>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section company">
+      <h3>О компании</h3>
+      <ul>
+        <li><a href="index.html">Наша команда</a></li>
+        <li><a href="index.html">Проекты</a></li>
+        <li><a href="index.html">Вопрос-ответ</a></li>
+        <li><a href="index.html">Отзывы</li>
+      </ul>
+    </div>
+
+    <div class="footer-section contacts">
+      <h3>Контакты</h3>
+      <address>
+        <p><span>📍 г. Рязань, ул. Пушкина, стр. 1</span></p>
+        <p><span>📞 +7 (4912) 62-62-62</span></p>
+        <p>✉️ <a href="mailto:garage62@mail.ru">garage62@mail.ru</a></p>
+        <p>📱 <a href="https://t.me/garage62" target="_blank">Telegram</a></p>
+        <p>💬 <a href="https://vk.com/garage62" target="_blank">VK</a></p>
+      </address>
+    </div>
+
+    <div class="footer-section map">
+      <h3>Схема проезда</h3>
+      <img src="images/map.jpg" alt="Карта проезда к Garage62" class="map-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Garage62. Премиальный автосервис в Рязани.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/vue@3.5.26/dist/vue.global.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="main.min.js"></script>
+</body>
+</html>

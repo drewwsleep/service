@@ -1,0 +1,315 @@
+/* ===== СТИЛИ СТРАНИЦЫ ЗАКАЗА — GARAGE62 ===== */
+
+.order-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.order-header {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+
+  h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: var(--success-color);
+  }
+
+  p {
+    color: var(--text-light);
+    margin: 0;
+  }
+}
+
+.order-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: var(--border-color);
+    z-index: 1;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-weight: bold;
+      color: var(--text-main);
+    }
+
+    &.completed {
+      .step-number {
+        background: var(--success-color);
+        border-color: var(--success-color);
+        color: white;
+      }
+
+      p {
+        color: var(--success-color);
+        font-weight: 600;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+  }
+}
+
+/* ===== СПИСОК ТОВАРОВ В ЗАКАЗЕ ===== */
+.order-items {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: var(--bg-dark);
+  }
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 15px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .order-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    background: var(--bg-main);
+  }
+
+  .order-item-icon {
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--text-light);
+  }
+
+  .item-info {
+    overflow: hidden;
+
+    strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .item-meta {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+  }
+
+  .item-qty {
+    min-width: 28px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+
+/* ===== БЛОК ДОСТАВКИ / ИНФОРМАЦИИ ===== */
+.delivery-notification {
+  background: #f8fff9;
+  border: 1px solid var(--success-color);
+  border-radius: var(--radius);
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(25, 187, 13, 0.1);
+
+  .delivery-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+    color: var(--success-color);
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--bg-dark);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 20px;
+  }
+}
+
+.delivery-details {
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+
+  .detail-item {
+    background: white;
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--success-color);
+
+    strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--bg-dark);
+      font-size: 15px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+  }
+}
+
+.delivery-instruction {
+  background: #f0f9ff;
+  border: 2px solid #b3e5fc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 0;
+  text-align: left;
+
+  strong {
+    color: #0288d1;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 10px;
+      color: #555;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.delivery-note {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* ===== ИТОГОВЫЙ БЛОК ===== */
+.order-summary {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--bg-dark);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+  font-size: 16px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span:last-child {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+}
+
+.summary-total {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--bg-dark);
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid var(--success-color);
+
+  span:last-child {
+    color: var(--success-color);
+    font-size: 22px;
+  }
+}
+
+.btn-back {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius);
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+
+  &:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-dark);
+  }
+}

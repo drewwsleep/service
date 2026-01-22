@@ -1,0 +1,382 @@
+@import "var.less";
+
+/* ===== СТИЛИ ДЛЯ СТРАНИЦ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ ===== */
+
+.auth-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--bg-main);
+}
+
+.auth-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-card {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  padding: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  
+  h1 {
+    margin: 0 0 30px 0;
+    font-size: 28px;
+    text-align: center;
+    color: var(--bg-dark);
+  }
+  
+  h2 {
+    margin: 0 0 30px 0;
+    font-size: 28px;
+    text-align: center;
+    color: var(--bg-dark);
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  label {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--bg-dark);
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+    
+    &:hover {
+      border-color: var(--primary-color);
+    }
+    
+    &::placeholder {
+      color: #999;
+    }
+  }
+  
+  select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: var(--bg-light);
+    color: var(--text-main);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    resize: vertical;
+    min-height: 100px;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+  }
+}
+
+.password-container {
+  position: relative;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-light);
+  
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
+  label {
+    margin: 0;
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: 400;
+  }
+}
+
+.auth-button {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  
+  &:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn-submit {
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  
+  &:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(--text-light);
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      text-decoration: underline;
+      color: var(--primary-hover);
+    }
+  }
+}
+
+.auth-link {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-top: 20px;
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Специфичные стили для страницы регистрации */
+.register-form {
+  .terms {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.4;
+    margin-top: 10px;
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Уведомления */
+#notification,
+#loginMessage,
+#regMessage {
+  position: relative;
+  padding: 15px 20px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+#notification.show {
+  display: block;
+}
+
+input.error {
+  border: 2px solid var(--danger-color) !important;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+input.valid {
+  border: 2px solid var(--primary-color) !important;
+}
+
+/* Стили для чекбокса с ошибкой */
+.form-checkbox.error {
+  color: var(--danger-color);
+  
+  label {
+    background: rgba(239, 68, 68, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+}
+
+#regMessage,
+#loginMessage {
+  color: var(--danger-color);
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--danger-color);
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: none;
+}
+
+/* ===== СТИЛИ ДЛЯ ПОЛЬЗОВАТЕЛЬСКОГО МЕНЮ И ВЫХОДА ===== */
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-main);
+
+  .user-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .user-car {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+    text-align: left;
+    width: 100%;
+  }
+
+  #userName {
+    font-weight: 500;
+  }
+
+  #userRole {
+    color: var(--text-light);
+    font-size: 13px;
+  }
+}
+
+.btn-logout {
+  padding: 8px 16px;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #d32f2f;
+  }
+}
+
+/* ===== СТИЛИ ДЛЯ УВЕДОМЛЕНИЙ ===== */
+
+#notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--success-color);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2000;
+  max-width: 320px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

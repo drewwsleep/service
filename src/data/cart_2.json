@@ -1,0 +1,16 @@
+[
+  {
+    "type": "service",
+    "name": "Замена масла и фильтров",
+    "price": 2000,
+    "image": null,
+    "qty": 1
+  },
+  {
+    "type": "part",
+    "name": "Моторное масло 5W-30",
+    "price": 1500,
+    "image": "images/oil.jpg",
+    "qty": 1
+  }
+]

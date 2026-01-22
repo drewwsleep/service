@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Заказ оформлен — Garage62</title>
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="icon" type="image/x-icon" href="images/62.png">
+</head>
+<body>
+
+<!-- ХЕДЕР С НАВИГАЦИЕЙ -->
+<header>
+  <div class="header-top">
+    <a href="index.html" class="logo"><img src="images/icon.png" alt="Garage 62"> |Garage62</a>
+    
+    <div class="auth-buttons" id="authButtons">
+      <a href="cart.html" class="btn-cart" title="Корзина">
+        🛒<span id="cartCount">0</span>
+      </a>
+      <a href="login.html" class="btn-login">Войти</a>
+      <a href="reg.html" class="btn-register">Зарегистрироваться</a>
+    </div>
+    
+    <div class="user-info" id="userInfo">
+      <div class="user-top">
+        <span id="userName"></span>
+        <span id="userRole"></span>
+        <button id="logoutBtn" class="btn-logout">Выйти</button>
+      </div>
+      <div class="user-car" id="userCarInfo"></div>
+    </div>
+
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="index.html#parts">Запчасти</a></li>
+      <li><a href="index.html#booking">Запись</a></li>
+      <li id="adminNav"><a href="index.html#admin">Администрирование</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container order-container">
+
+    <!-- СПИСОК ТОВАРОВ -->
+    <section class="order-items">
+      <h2>Ваш заказ (<span id="cartCountHeader">0</span>)</h2>
+      <div id="orderItemsContainer">
+        <!-- Сюда будет вставлено содержимое через JS -->
+      </div>
+    </section>
+
+    <!-- Информация о заказе -->
+    <section class="delivery-notification">
+      <div class="delivery-icon">✅</div>
+      <h2>Ваш заказ принят и обрабатывается!</h2>
+      <p>Мы свяжемся с вами в ближайшее время...</p>
+      
+      <!-- ... остальное без изменений ... -->
+    </section>
+
+    <!-- Итоговая сумма -->
+    <aside class="order-summary">
+      <h2>Детали заказа</h2>
+
+      <div class="summary-row">
+        <span>Стоимость работ:</span>
+        <span id="sumPrice">0 ₽</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Запчасти:</span>
+        <span id="partsCost">0 ₽</span>
+      </div>
+
+      <div class="summary-row summary-total">
+        <span>Общая сумма:</span>
+        <span id="total">0 ₽</span>
+      </div>
+
+      <a href="index.html" class="btn-back">← Вернуться на главную</a>
+    </aside>
+  </div>
+</main>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section company">
+      <h3>О компании</h3>
+      <ul>
+        <li><a href="index.html">Наша команда</a></li>
+        <li><a href="index.html">Проекты</a></li>
+        <li><a href="index.html">Вопрос-ответ</a></li>
+        <li><a href="index.html">Отзывы</li>
+      </ul>
+    </div>
+
+    <div class="footer-section contacts">
+      <h3>Контакты</h3>
+      <address>
+        <p><span>📍 г. Рязань, ул. Пушкина, стр. 1</span></p>
+        <p><span>📞 +7 (4912) 62-62-62</span></p>
+        <p>✉️ <a href="mailto:garage62@mail.ru">garage62@mail.ru</a></p>
+        <p>📱 <a href="https://t.me/garage62" target="_blank">Telegram</a></p>
+        <p>💬 <a href="https://vk.com/garage62" target="_blank">VK</a></p>
+      </address>
+    </div>
+
+    <div class="footer-section map">
+      <h3>Схема проезда</h3>
+      <img src="images/map.jpg" alt="Карта проезда к Garage62" class="map-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Garage62. Премиальный автосервис в Рязани.</p>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="main.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@garage62.ru",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "User",
+    "email": "user@mail.ru",
+    "password": "user12345",
+    "role": "user",
+    "car": {
+      "model": "Hyundai Solaris",
+      "engineVolume": 1.6
+    }
+  },
+  {
+    "id": 1768581440972,
+    "name": "Николай",
+    "email": "kolyan@mail.ru",
+    "password": "11111111",
+    "role": "user",
+    "car": {
+      "model": "Toyota Camry",
+      "engineVolume": 3.5
+    }
+  },
+  {
+    "id": 1769016682709,
+    "name": "Валера",
+    "email": "valera@mail.ru",
+    "password": "11111111",
+    "role": "user",
+    "car": {
+      "model": "Range Rover Sport",
+      "engineVolume": 4.4
+    }
+  }
+]

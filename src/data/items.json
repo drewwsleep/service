@@ -1,0 +1,219 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Замена масла и фильтров",
+      "price": 2000,
+      "description": "Замена моторного масла и масляного фильтра",
+      "parts": ["Моторное масло 5W-30", "Масляный фильтр"],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 1500 },
+          { "upTo": 2.5, "price": 2000 },
+          { "upTo": 4.0, "price": 2800 },
+          { "upTo": 6.0, "price": 3500 }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Диагностика автомобиля",
+      "price": 1500,
+      "description": "Полная компьютерная диагностика с отчётом",
+      "parts": [
+        "Проверка двигателя",
+        "Проверка электроники",
+        "Отчёт на email"
+      ],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 1200 },
+          { "upTo": 2.5, "price": 1500 },
+          { "upTo": 4.0, "price": 1800 },
+          { "upTo": 6.0, "price": 2200 }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "Замена тормозных колодок",
+      "price": 3500,
+      "description": "Замена передних или задних колодок с регулировкой",
+      "parts": [
+        "Комплект тормозных колодок",
+        "Смазка для тормозов"
+      ],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 2800 },
+          { "upTo": 2.5, "price": 3500 },
+          { "upTo": 4.0, "price": 4200 },
+          { "upTo": 6.0, "price": 5000 }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "ТО-1",
+      "price": 4500,
+      "description": "Плановое техническое обслуживание по регламенту",
+      "parts": [
+        "Замена масла и фильтров",
+        "Проверка всех систем",
+        "Регулировка"
+      ],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 3500 },
+          { "upTo": 2.5, "price": 4500 },
+          { "upTo": 4.0, "price": 5500 },
+          { "upTo": 6.0, "price": 6500 }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "Ремонт тормозной системы",
+      "price": 5000,
+      "description": "Диагностика и ремонт тормозной системы",
+      "parts": [
+        "Замена дисков",
+        "Замена колодок",
+        "Прокачка тормозов"
+      ],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 4000 },
+          { "upTo": 2.5, "price": 5000 },
+          { "upTo": 4.0, "price": 6000 },
+          { "upTo": 6.0, "price": 7000 }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "Замена аккумулятора",
+      "price": 2500,
+      "description": "Замена автомобильного аккумулятора на новый",
+      "parts": [
+        "Новый аккумулятор 60 А·ч",
+        "Монтаж и регулировка"
+      ],
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 2000 },
+          { "upTo": 2.5, "price": 2500 },
+          { "upTo": 4.0, "price": 3000 },
+          { "upTo": 6.0, "price": 3500 }
+        ]
+      }
+    }
+  ],
+  "parts": [
+    {
+      "id": 1,
+      "name": "Моторное масло 5W-30",
+      "price": 1500,
+      "description": "Синтетическое масло, объём 4л",
+      "image": "images/oil.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 1350 },
+          { "upTo": 2.5, "price": 1500 },
+          { "upTo": 4.0, "price": 1800 },
+          { "upTo": 6.0, "price": 2250 }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Масляный фильтр",
+      "price": 500,
+      "description": "Оригинальный фильтр для большинства марок",
+      "image": "images/filter.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 450 },
+          { "upTo": 2.5, "price": 500 },
+          { "upTo": 4.0, "price": 600 },
+          { "upTo": 6.0, "price": 750 }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "Тормозные колодки",
+      "price": 2500,
+      "description": "Передние колодки, керамика",
+      "image": "images/brakes.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 2250 },
+          { "upTo": 2.5, "price": 2500 },
+          { "upTo": 4.0, "price": 3000 },
+          { "upTo": 6.0, "price": 3750 }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "Воздушный фильтр",
+      "price": 800,
+      "description": "Фильтр для впуска воздуха двигателя",
+      "image": "images/airfilter.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 720 },
+          { "upTo": 2.5, "price": 800 },
+          { "upTo": 4.0, "price": 960 },
+          { "upTo": 6.0, "price": 1200 }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "Салонный фильтр",
+      "price": 600,
+      "description": "Фильтр очистки воздуха в салоне",
+      "image": "images/saloonfilter.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 540 },
+          { "upTo": 2.5, "price": 600 },
+          { "upTo": 4.0, "price": 720 },
+          { "upTo": 6.0, "price": 900 }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "Автомобильный аккумулятор",
+      "price": 4600,
+      "description": "Автомобильный аккумулятор 60 А·ч",
+      "image": "images/battery.jpg",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 4140 },
+          { "upTo": 2.5, "price": 4600 },
+          { "upTo": 4.0, "price": 5520 },
+          { "upTo": 6.0, "price": 6900 }
+        ]
+      }
+    },
+    {
+      "id": 1768603824361,
+      "name": "Поршень",
+      "price": 500,
+      "description": "самый крутой",
+      "image": "https://avatars.mds.yandex.net/get-mpic/5254754/img_id6435419379827844445.jpeg/orig",
+      "pricingRules": {
+        "engineVolume": [
+          { "upTo": 1.6, "price": 450 },
+          { "upTo": 2.5, "price": 500 },
+          { "upTo": 4.0, "price": 600 },
+          { "upTo": 6.0, "price": 750 }
+        ]
+      }
+    }
+  ]
+}
